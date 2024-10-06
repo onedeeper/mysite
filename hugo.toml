@@ -1,0 +1,59 @@
+baseURL = "https://udesh.io/" # Replace with your domain
+languageCode = "en-us"
+title = "udesh"
+theme = "PaperMod"
+summaryLength = 50
+paginate = 10
+
+# Author information
+[author]
+  name = "Udesh"
+  website = "https://udesh.io/about/"
+
+# Menu Configuration
+[menu]
+
+  [[menu.main]]
+    identifier = "home"
+    name = "home"
+    url = "/"
+    weight = 1
+
+  [[menu.main]]
+    identifier = "podcast"
+    name = "podcast"
+    url = "/podcast/"
+    weight = 2
+
+  [[menu.main]]
+    identifier = "personal"
+    name = "writing/personal"
+    url = "/personal/"
+    weight = 3
+
+  [[menu.main]]
+    identifier = "academic"
+    name = "writing/academic"
+    url = "/academic/"
+    weight = 4
+
+  [[menu.main]]
+    identifier = "misc"
+    name = "misc."
+    url = "/misc/"
+    weight = 5
+
+# Parameters for the PaperMod theme
+[params]
+
+  logo = "images/logo.png" # Add a logo in your "static/images" directory
+  themeColor = "#FF370C" # Customize to match your preferred brand color
+  mode = "light" # Options: "light", "dark", "auto"
+  customCSS = ["css/extended/tufte.css"]
+
+  ShowReadingTime = true # Display estimated reading time for posts
+  ShowShareButtons = false # Enable sharing buttons on posts
+  ShowBreadCrumbs = false
+  ShowProjectsPage = false # Add this line to disable showing projects on the homepage
+  mainSections = ["posts", "essays"]
+  disableThemeToggle = true

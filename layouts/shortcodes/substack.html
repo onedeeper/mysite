@@ -1,0 +1,15 @@
+{{ if .Get "url" }}
+{{ $url := .Get "url" }}
+
+<div class="py-8">
+    {{ with resources.GetRemote $url | transform.Unmarshal }}
+    {{ range .channel.item }}
+    <div class="mb-4">
+        <p class="my-text-style">
+            <a href="{{ .link }}" target="_blank">{{ .title | htmlUnescape }}</a>
+        </p>
+    </div>
+    {{ end }}
+    {{ end }}
+</div>
+{{ end }}

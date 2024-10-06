@@ -1,0 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap');
+
+body, h1, h2, h3, h4, h5, h6, .navbar, .menu a {
+    font-family: 'Lora', serif; /* Set Lora as the font for body text, headings, and navigation */
+}
