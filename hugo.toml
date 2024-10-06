@@ -1,4 +1,4 @@
-baseURL = "https://udesh.io/" # Replace with your domain
+baseURL = "https://onedeeper.github.io/mysite/" # Replace with your domain
 languageCode = "en-us"
 title = "udesh"
 theme = "PaperMod"
