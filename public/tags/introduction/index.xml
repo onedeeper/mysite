@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Introduction on udesh</title>
-    <link>https://onedeeper.github.io/mysite/tags/introduction/</link>
+    <link>https://udesh.io/tags/introduction/</link>
     <description>Recent content in Introduction on udesh</description>
     <generator>Hugo -- 0.135.0</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 04 Oct 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://onedeeper.github.io/mysite/tags/introduction/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://udesh.io/tags/introduction/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Test project</title>
-      <link>https://onedeeper.github.io/mysite/about/</link>
+      <link>https://udesh.io/about/</link>
       <pubDate>Fri, 04 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>https://onedeeper.github.io/mysite/about/</guid>
+      <guid>https://udesh.io/about/</guid>
       <description>A brief introduction to my podcast journey and what to expect.</description>
     </item>
   </channel>

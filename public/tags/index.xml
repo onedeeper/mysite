@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Tags on udesh</title>
-    <link>https://onedeeper.github.io/mysite/tags/</link>
+    <link>https://udesh.io/tags/</link>
     <description>Recent content in Tags on udesh</description>
     <generator>Hugo -- 0.135.0</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 04 Oct 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://onedeeper.github.io/mysite/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://udesh.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Introduction</title>
-      <link>https://onedeeper.github.io/mysite/tags/introduction/</link>
+      <link>https://udesh.io/tags/introduction/</link>
       <pubDate>Fri, 04 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>https://onedeeper.github.io/mysite/tags/introduction/</guid>
+      <guid>https://udesh.io/tags/introduction/</guid>
       <description></description>
     </item>
     <item>
       <title>Podcast</title>
-      <link>https://onedeeper.github.io/mysite/tags/podcast/</link>
+      <link>https://udesh.io/tags/podcast/</link>
       <pubDate>Fri, 04 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>https://onedeeper.github.io/mysite/tags/podcast/</guid>
+      <guid>https://udesh.io/tags/podcast/</guid>
       <description></description>
     </item>
   </channel>
