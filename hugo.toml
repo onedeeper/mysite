@@ -8,7 +8,7 @@ paginate = 10
 # Author information
 [author]
   name = "Udesh"
-  website = "https://udesh.io/about/"
+  website = "https://udesh.io"
 
 # Menu Configuration
 [menu]
