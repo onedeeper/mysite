@@ -2,33 +2,33 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/mysite/</loc>
+    <loc>https://onedeeper.github.io/mysite/</loc>
     <lastmod>2024-10-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/mysite/academic/</loc>
+    <loc>https://onedeeper.github.io/mysite/academic/</loc>
     <lastmod>2024-10-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/mysite/tags/introduction/</loc>
+    <loc>https://onedeeper.github.io/mysite/tags/introduction/</loc>
     <lastmod>2024-10-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/mysite/misc/</loc>
+    <loc>https://onedeeper.github.io/mysite/misc/</loc>
     <lastmod>2024-10-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/mysite/personal/</loc>
+    <loc>https://onedeeper.github.io/mysite/personal/</loc>
     <lastmod>2024-10-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/mysite/tags/podcast/</loc>
+    <loc>https://onedeeper.github.io/mysite/tags/podcast/</loc>
     <lastmod>2024-10-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/mysite/podcast/</loc>
+    <loc>https://onedeeper.github.io/mysite/podcast/</loc>
     <lastmod>2024-10-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/mysite/tags/</loc>
+    <loc>https://onedeeper.github.io/mysite/tags/</loc>
     <lastmod>2024-10-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/mysite/about/</loc>
+    <loc>https://onedeeper.github.io/mysite/about/</loc>
     <lastmod>2024-10-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/mysite/categories/</loc>
+    <loc>https://onedeeper.github.io/mysite/categories/</loc>
   </url>
 </urlset>
