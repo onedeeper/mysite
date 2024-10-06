@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Misc. on udesh</title>
-    <link>https://udesh.io/misc/</link>
+    <link>http://localhost:54586/misc/</link>
     <description>Recent content in Misc. on udesh</description>
-    <generator>Hugo -- 0.135.0</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate></lastBuildDate>
-    <atom:link href="https://udesh.io/misc/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:54586/misc/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on udesh</title>
-    <link>https://udesh.io/tags/</link>
+    <link>http://localhost:54586/tags/</link>
     <description>Recent content in Tags on udesh</description>
-    <generator>Hugo -- 0.135.0</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 04 Oct 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://udesh.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:54586/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Introduction</title>
-      <link>https://udesh.io/tags/introduction/</link>
+      <link>http://localhost:54586/tags/introduction/</link>
       <pubDate>Fri, 04 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>https://udesh.io/tags/introduction/</guid>
+      <guid>http://localhost:54586/tags/introduction/</guid>
       <description></description>
     </item>
     <item>
       <title>Podcast</title>
-      <link>https://udesh.io/tags/podcast/</link>
+      <link>http://localhost:54586/tags/podcast/</link>
       <pubDate>Fri, 04 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>https://udesh.io/tags/podcast/</guid>
+      <guid>http://localhost:54586/tags/podcast/</guid>
       <description></description>
     </item>
   </channel>
