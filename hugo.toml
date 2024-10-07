@@ -11,36 +11,36 @@ paginate = 10
   website = "https://udesh.io"
 
 # Menu Configuration
-[menu]
+[menus]
 
-  [[menu.main]]
+  [[menus.main]]
     identifier = "home"
     name = "home"
-    url = "/"
+    pageRef = "/"
     weight = 1
 
-  [[menu.main]]
+  [[menus.main]]
     identifier = "podcast"
     name = "podcast"
-    url = "/podcast/"
+    pageRef = "/podcast"
     weight = 2
 
-  [[menu.main]]
+  [[menus.main]]
     identifier = "personal"
     name = "writing/personal"
-    url = "/personal/"
+    pageRef = "/personal"
     weight = 3
 
-  [[menu.main]]
+  [[menus.main]]
     identifier = "academic"
     name = "writing/academic"
-    url = "/academic/"
+    pageRef = "/academic"
     weight = 4
 
-  [[menu.main]]
+  [[menus.main]]
     identifier = "misc"
     name = "misc."
-    url = "/misc/"
+    pageRef = "/misc"
     weight = 5
 
 # Parameters for the PaperMod theme
@@ -55,5 +55,5 @@ paginate = 10
   ShowShareButtons = false # Enable sharing buttons on posts
   ShowBreadCrumbs = false
   ShowProjectsPage = false # Add this line to disable showing projects on the homepage
-  mainSections = ["posts", "essays"]
+  mainSections = ["personal"]
   disableThemeToggle = true
