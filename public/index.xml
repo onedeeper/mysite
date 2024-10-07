@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Welcome on udesh</title>
-    <link>http://localhost:54586/</link>
+    <link>http://localhost:1313/</link>
     <description>Recent content in Welcome on udesh</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 04 Oct 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:54586/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Test project</title>
-      <link>http://localhost:54586/about/</link>
+      <link>http://localhost:1313/about/</link>
       <pubDate>Fri, 04 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:54586/about/</guid>
+      <guid>http://localhost:1313/about/</guid>
       <description>&lt;p&gt;I&amp;rsquo;m Udesh Habaraduwa&lt;br&gt;&#xA;I believe humanity is good, valuable, and worth saving.&lt;br&gt;&#xA;I believe in the power of reason and science but worship neither.&lt;br&gt;&#xA;I believe problems are inevitable, solvable, and worth solving.&lt;br&gt;&#xA;I believe that, all else being equal, its better to be free.&lt;/p&gt;</description>
     </item>
   </channel>
