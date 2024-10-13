@@ -1,26 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Podcast on udesh</title>
     <link>http://localhost:1313/tags/podcast/</link>
     <description>Recent content in Podcast on udesh</description>
-    <generator>Hugo</generator>
+    <generator>Hugo -- 0.135.0</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 04 Oct 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/podcast/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Misc.</title>
-      <link>http://localhost:1313/misc/</link>
-      <pubDate>Fri, 04 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/misc/</guid>
-      <description></description>
-    </item>
     <item>
       <title>Test project</title>
       <link>http://localhost:1313/about/</link>
       <pubDate>Fri, 04 Oct 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/about/</guid>
-      <description>&lt;p&gt;I&amp;rsquo;m Udesh Habaraduwa&lt;br&gt;&#xA;I believe humanity is good, valuable, and worth saving.&lt;br&gt;&#xA;I believe in the power of reason and science but worship neither.&lt;br&gt;&#xA;I believe problems are inevitable, solvable, and worth solving.&lt;br&gt;&#xA;I believe that, all else being equal, its better to be free.&lt;/p&gt;</description>
+      <description>A brief introduction to my podcast journey and what to expect.</description>
     </item>
   </channel>
 </rss>
