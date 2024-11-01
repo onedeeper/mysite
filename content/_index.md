@@ -17,5 +17,6 @@ I believe that, all else being equal, it's better to be free.
 - My [podcast](https://onedeeper.substack.com).
 - My [LinkedIn](https://www.linkedin.com/in/onedeeper/).
 - My [GitHub](https://github.com/onedeeper).
+- My [Medium](https://onedeeper.medium.com).
 
 Thank you for your patience!
