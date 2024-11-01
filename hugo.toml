@@ -20,28 +20,34 @@ paginate = 10
     weight = 1
 
   [[menus.main]]
+    identifier = "plan"
+    name = "plan"
+    pageRef = "/plan"
+    weight = 2
+
+  [[menus.main]]
     identifier = "podcast"
     name = "podcast"
     pageRef = "/podcast"
-    weight = 2
+    weight = 3
 
   [[menus.main]]
     identifier = "personal"
     name = "writing/personal"
     pageRef = "/personal"
-    weight = 3
+    weight = 4
 
   [[menus.main]]
     identifier = "academic"
     name = "writing/academic"
     pageRef = "/academic"
-    weight = 4
+    weight = 5
 
   [[menus.main]]
     identifier = "misc"
     name = "misc."
     pageRef = "/misc"
-    weight = 5
+    weight = 6
 
 # Parameters for the PaperMod theme
 [params]
