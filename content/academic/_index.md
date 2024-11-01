@@ -10,7 +10,7 @@ Welcome to my academic portfolio. Below is a list of my published and ongoing wo
 
 - **[Implicit Coordination Dynamics: A Synchrony-based Study on Team Positioning and Performance in Competitive Dota 2](https://ieeexplore.ieee.org/document/10738480)** - IEEE (2024)
 
-## Preprints
+## Other
 
 - **[Inductive Models for Artificial Intelligence Systems are Insufficient without Good Explanations](https://arxiv.org/abs/2401.09011)**
 
