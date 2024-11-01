@@ -20,9 +20,9 @@ paginate = 10
     weight = 1
 
   [[menus.main]]
-    identifier = "plan"
-    name = "plan"
-    pageRef = "/plan"
+    identifier = "future"
+    name = "future"
+    pageRef = "/future"
     weight = 2
 
   [[menus.main]]
