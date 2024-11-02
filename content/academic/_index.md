@@ -4,8 +4,6 @@ date: 2024-10-04
 description: ""
 ---
 
-Welcome to my academic portfolio. Below is a list of my published and ongoing work.
-
 ## Published Articles
 
 - **[Implicit Coordination Dynamics: A Synchrony-based Study on Team Positioning and Performance in Competitive Dota 2](https://ieeexplore.ieee.org/document/10738480)** - IEEE (2024)
