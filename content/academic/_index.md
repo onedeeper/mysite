@@ -11,7 +11,7 @@ description: ""
 ## Other
 
 - **[Inductive Models for Artificial Intelligence Systems are Insufficient without Good Explanations](https://arxiv.org/abs/2401.09011)**
-
+- **[Yet Another Deep Learning Explanation](/dl.html)**
 <!-- ## Conference Presentations
 
 - **Title of the Presentation** - Conference Name, Location (Year) <span style="color: blue;">**Presented**</span>
@@ -21,5 +21,3 @@ description: ""
 - **Title of the Ongoing Work** - Journal/Conference Target <span style="color: gray;">**In Progress**</span> -->
 
 ---
-
-*More content coming soon!*
