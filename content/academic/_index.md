@@ -12,6 +12,7 @@ description: ""
 
 - **[Inductive Models for Artificial Intelligence Systems are Insufficient without Good Explanations](https://arxiv.org/abs/2401.09011)**
 - **[Yet Another Deep Learning Explanation](/dl.html)**
+- **[Updating Priors with Bayesian Inference](/Updating_priors.html)**
 <!-- ## Conference Presentations
 
 - **Title of the Presentation** - Conference Name, Location (Year) <span style="color: blue;">**Presented**</span>
