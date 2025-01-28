@@ -11,6 +11,9 @@ This is my current best plan forward. It is subject to change.
 
 The long-term vision is to ensure humanity’s survival and growth beyond Earth. Achieving this requires solutions to foundational challenges, such as producing sustainable life support systems and efficient resource utilization in environments with limited natural resources. Technology and understanding developed for space applications have the potential to significantly benefit Earth, especially in resource-scarce regions.
 
+##[Update: 28-01-2025]
+
+
 ## Biology is a complex dynamical system.
 
 Nature operates through interconnected, non-linear dynamical systems, whether in ecosystems, cellular biology, or astrophysical processes. These complex systems present unique challenges and opportunities; understanding them is critical for predicting, controlling, and utilizing them for human advancement.
