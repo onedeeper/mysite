@@ -2,17 +2,13 @@
 title: "Future"
 date: 2024-11-01
 description:
-tags: ["podcast", "introduction"]
 ---
 
 This is my current best plan forward. It is subject to change. 
 
-## More, better humans.
+# More, better, humans.
 
-The long-term vision is to ensure humanity’s survival and growth beyond Earth. Achieving this requires solutions to foundational challenges, such as producing sustainable life support systems and efficient resource utilization in environments with limited natural resources. Technology and understanding developed for space applications have the potential to significantly benefit Earth, especially in resource-scarce regions.
-
-##[Update: 28-01-2025]
-
+The long-term vision is to ensure humanity’s survival and growth on Earth and beyond. Achieving this requires solutions to foundational challenges, such as producing sustainable life support systems and efficient resource utilization in environments with limited natural resources. Technology and understanding developed for space applications have the potential to significantly benefit Earth, especially in resource-scarce regions.
 
 ## Biology is a complex dynamical system.
 

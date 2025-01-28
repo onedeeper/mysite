@@ -20,12 +20,6 @@ paginate = 10
     weight = 1
 
   [[menus.main]]
-    identifier = "future"
-    name = "future"
-    pageRef = "/future"
-    weight = 2
-
-  [[menus.main]]
     identifier = "podcast"
     name = "podcast"
     url = "https://onedeeper.substack.com"
