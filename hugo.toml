@@ -39,9 +39,15 @@ paginate = 10
 
   [[menus.main]]
     identifier = "misc"
-    name = "misc."
+    name = "projects"
     pageRef = "/misc"
     weight = 6
+
+  [[menus.main]]
+    identifier = "centenarian"
+    name = "centenarian decathlon"
+    url = "/attack.html"
+    weight = 7
 
 # Parameters for the PaperMod theme
 [params]
