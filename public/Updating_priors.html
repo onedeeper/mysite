@@ -208,7 +208,7 @@ P(\theta|\text{data}) = \frac{P(data|\theta)\cdot P(\theta)}{P(\text{data})}
 \text{Posterior} &amp;= \frac{\text{Likelihood}\cdot\text{Prior}}{\text{Marginal Likelihood}}\\
 \end{align}
 \]</span></p>
-<p>If we ignore the denominator for a moment, what this says is that we want to scale our prior belief (about <span class="math inline">\(\theta\)</span>) in proportion to how likely the observed data is given our prior belief. This should make sense intuitively. The whole point is to update our belief about what <span class="math inline">\(\theta\)</span> might be. If the data we see is pretty likely given our belief as it is, there is no need to do much updating. If we have no specific prior belief what so ever (<span class="math inline">\(P(\theta) = 1\)</span>), then we should update our belief directly by the likelihood.</p>
+<p>If we ignore the denominator for a moment</p>
 <p><span class="math display">\[
 P(\theta|\text{data}) \propto P(\text{data}|\theta)\cdot P(\theta)
 \]</span></p>
