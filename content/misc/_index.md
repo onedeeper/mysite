@@ -10,7 +10,8 @@ tags: ["podcast", "introduction"]
 
 A selection of my most recent projects, from newest to oldest
 
-- **[Predicting psychiatric indications from EEG data](https://github.com/onedeeper/thesis)** 🚧 - [Python] A package developed for the completion of Masters degree. Implements a full cleaning and machine learning pipeline for EEG data .
+- **[Decision Tree from Scratch](/decision_tree/)** ✅ - [Python] A tutorial on implementing a decision tree from scratch.
+- **[Predicting psychiatric indications from EEG data](https://github.com/onedeeper/EEGLearn)** ✅ - [Python] A package developed for the completion of Masters degree. Implements a full cleaning and machine learning pipeline for EEG data .
 - **[Print neural network parameters](https://github.com/onedeeper/NNParamsPrinter.jl)** ✅ - [Julia] package to print parameters of a Lux neural network in a readable way.
 - **[Recurrent and fully connected neural networks from scratch](https://github.com/onedeeper/deeplearning/tree/main)** ✅- [Python] Two notebooks where I develop two foundational machine learning models, the multi-layer perceptron and recurrent neural network, from scratch.
 - **[Machine learning on EEG data for BCI applications in esports](https://github.com/onedeeper/lolbci)** ✅ - [Python] Classification of player mental states during League of Legends play using electrical signals recorded from the scalp (EEG).

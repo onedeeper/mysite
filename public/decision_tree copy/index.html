@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="./favicon.ico" />
+    <!-- Preload is necessary because we show these images when we disconnect from the server,
+    but at that point we cannot load these images from the server -->
+    <link rel="preload" href="./assets/gradient-yHQUC_QB.png" as="image" />
+    <link rel="preload" href="./assets/noise-60BoTA8O.png" as="image" />
+    <!-- Preload the fonts -->
+    <link rel="preload" href="./assets/Lora-VariableFont_wght-B2ootaw-.ttf" as="font" crossorigin="anonymous" />
+    <link rel="preload" href="./assets/PTSans-Regular-CxL0S8W7.ttf" as="font" crossorigin="anonymous" />
+    <link rel="preload" href="./assets/PTSans-Bold-D9fedIX3.ttf" as="font" crossorigin="anonymous" />
+    <link rel="preload" href="./assets/FiraMono-Regular-BTCkDNvf.ttf" as="font" crossorigin="anonymous" />
+    <link rel="preload" href="./assets/FiraMono-Medium-DU3aDxX5.ttf" as="font" crossorigin="anonymous" />
+    <link rel="preload" href="./assets/FiraMono-Bold-CLVRCuM9.ttf" as="font" crossorigin="anonymous" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="a marimo app" />
+    <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
+    <link rel="manifest" href="./manifest.json" />
+
+    <script data-marimo="true">
+      function __resizeIframe(obj) {
+        var scrollbarHeight = 20; // Max between windows, mac, and linux
+
+        function setHeight() {
+          // Guard against race condition where iframe isn't ready
+          if (!obj.contentWindow?.document?.documentElement) {
+            return;
+          }
+          var element = obj.contentWindow.document.documentElement;
+          // If there is no vertical scrollbar, we don't need to resize the iframe
+          if (element.scrollHeight === element.clientHeight) {
+            return;
+          }
+
+          // Create a new height that includes the scrollbar height if it's visible
+          var hasHorizontalScrollbar = element.scrollWidth > element.clientWidth;
+          var newHeight = element.scrollHeight + (hasHorizontalScrollbar ? scrollbarHeight : 0);
+
+          // Only update the height if it's different from the current height
+          if (obj.style.height !== `${newHeight}px`) {
+            obj.style.height = `${newHeight}px`;
+          }
+        }
+
+        // Resize the iframe to the height of the content and bottom scrollbar height
+        setHeight();
+
+        // Resize the iframe when the content changes
+        const resizeObserver = new ResizeObserver((entries) => {
+          setHeight();
+        });
+        // Only observe if iframe content is ready
+        if (obj.contentWindow?.document?.body) {
+          resizeObserver.observe(obj.contentWindow.document.body);
+        }
+      }
+    </script>
+    <marimo-filename hidden>notebook.py</marimo-filename>
+    <!-- TODO(Trevor): Legacy, required by VS Code plugin. Remove when plugin is updated (see marimo/server/_templates/template.py) -->
+    <marimo-version data-version="{{ version }}" hidden></marimo-version>
+    <marimo-user-config data-config="{{ user_config }}" hidden></marimo-user-config>
+    <marimo-server-token data-token="{{ server_token }}" hidden></marimo-server-token>
+    <!-- /TODO -->
+    <title>decision tree</title>
+    <script type="module" crossorigin src="./assets/index-CmLKiEd5.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/preload-helper-DImqtvgl.js">
+    <link rel="modulepreload" crossorigin href="./assets/chunk-DZLz74EQ.js">
+    <link rel="modulepreload" crossorigin href="./assets/react-BcIddLXZ.js">
+    <link rel="modulepreload" crossorigin href="./assets/jsx-runtime-DvsdsEjx.js">
+    <link rel="modulepreload" crossorigin href="./assets/dist-CLazWf1X.js">
+    <link rel="modulepreload" crossorigin href="./assets/react-dom-D6bRRS5R.js">
+    <link rel="modulepreload" crossorigin href="./assets/namespace-Cw55ynVb.js">
+    <link rel="modulepreload" crossorigin href="./assets/cn-CwmWKpZ_.js">
+    <link rel="modulepreload" crossorigin href="./assets/dist-BiHHvE7B.js">
+    <link rel="modulepreload" crossorigin href="./assets/menu-items-CE6I2UvI.js">
+    <link rel="modulepreload" crossorigin href="./assets/useEventListener-g9rPKvBX.js">
+    <link rel="modulepreload" crossorigin href="./assets/tslib.es6-C9vXkBtU.js">
+    <link rel="modulepreload" crossorigin href="./assets/fullscreen-DoREeXhW.js">
+    <link rel="modulepreload" crossorigin href="./assets/events-BGfCi1Xy.js">
+    <link rel="modulepreload" crossorigin href="./assets/dist-DT6vyuIM.js">
+    <link rel="modulepreload" crossorigin href="./assets/createLucideIcon-Dz-D6iuz.js">
+    <link rel="modulepreload" crossorigin href="./assets/check-CmOWIaur.js">
+    <link rel="modulepreload" crossorigin href="./assets/select-DIqNYEaz.js">
+    <link rel="modulepreload" crossorigin href="./assets/accordion-D8h6M7fo.js">
+    <link rel="modulepreload" crossorigin href="./assets/chevron-right-kGH9aJGk.js">
+    <link rel="modulepreload" crossorigin href="./assets/dropdown-menu-D3tww20d.js">
+    <link rel="modulepreload" crossorigin href="./assets/tooltip-CW-4dtRh.js">
+    <link rel="modulepreload" crossorigin href="./assets/Logger-BkkOJyg0.js">
+    <link rel="modulepreload" crossorigin href="./assets/hotkeys-ZAWHeY7d.js">
+    <link rel="modulepreload" crossorigin href="./assets/react-7g8sREeT.js">
+    <link rel="modulepreload" crossorigin href="./assets/_Uint8Array-D5Z9rM2X.js">
+    <link rel="modulepreload" crossorigin href="./assets/_getTag-CVRrQL_Q.js">
+    <link rel="modulepreload" crossorigin href="./assets/_baseIsEqual-BF8660ot.js">
+    <link rel="modulepreload" crossorigin href="./assets/invariant-B43sqCFA.js">
+    <link rel="modulepreload" crossorigin href="./assets/isArrayLikeObject-DKyJYtr8.js">
+    <link rel="modulepreload" crossorigin href="./assets/merge-BgA7kxZb.js">
+    <link rel="modulepreload" crossorigin href="./assets/zod-U2NFpcFA.js">
+    <link rel="modulepreload" crossorigin href="./assets/utils-DLuqCLqV.js">
+    <link rel="modulepreload" crossorigin href="./assets/requests-BW3DqHQI.js">
+    <link rel="modulepreload" crossorigin href="./assets/once-4nUTgcVU.js">
+    <link rel="modulepreload" crossorigin href="./assets/toDate-BNd9AHNi.js">
+    <link rel="modulepreload" crossorigin href="./assets/_baseSlice-B27Cqkm6.js">
+    <link rel="modulepreload" crossorigin href="./assets/_arrayMap-DQI2GUNb.js">
+    <link rel="modulepreload" crossorigin href="./assets/isSymbol-xTSywenE.js">
+    <link rel="modulepreload" crossorigin href="./assets/toString-CBnct2wx.js">
+    <link rel="modulepreload" crossorigin href="./assets/_hasUnicode-CPHpt5EV.js">
+    <link rel="modulepreload" crossorigin href="./assets/upperFirst-DOlTOwhh.js">
+    <link rel="modulepreload" crossorigin href="./assets/capitalize-CkrfIDeS.js">
+    <link rel="modulepreload" crossorigin href="./assets/ai-model-dropdown-D-i9tuGn.js">
+    <link rel="modulepreload" crossorigin href="./assets/documentation-B7z6bB-t.js">
+    <link rel="modulepreload" crossorigin href="./assets/badge-Cbb7s63B.js">
+    <link rel="modulepreload" crossorigin href="./assets/button-g1jf7cM6.js">
+    <link rel="modulepreload" crossorigin href="./assets/use-toast-BKA5A0CC.js">
+    <link rel="modulepreload" crossorigin href="./assets/constants-Cv7-oioA.js">
+    <link rel="modulepreload" crossorigin href="./assets/Deferred-Mppm0cvJ.js">
+    <link rel="modulepreload" crossorigin href="./assets/config-BeIk_wvs.js">
+    <link rel="modulepreload" crossorigin href="./assets/uuid-4lb_EYpq.js">
+    <link rel="modulepreload" crossorigin href="./assets/key-Pb6bybhb.js">
+    <link rel="modulepreload" crossorigin href="./assets/connection-UyRAkvTk.js">
+    <link rel="modulepreload" crossorigin href="./assets/useLifecycle-DmdhGVVs.js">
+    <link rel="modulepreload" crossorigin href="./assets/useNonce-DvpkYOW9.js">
+    <link rel="modulepreload" crossorigin href="./assets/useTheme-BWXNjHkw.js">
+    <link rel="modulepreload" crossorigin href="./assets/createReducer-CFr1RdS2.js">
+    <link rel="modulepreload" crossorigin href="./assets/dist-BNtnpgX8.js">
+    <link rel="modulepreload" crossorigin href="./assets/dist-B8v7AWk6.js">
+    <link rel="modulepreload" crossorigin href="./assets/dist-Ct0a8Isf.js">
+    <link rel="modulepreload" crossorigin href="./assets/dist-AWYmVWdt.js">
+    <link rel="modulepreload" crossorigin href="./assets/dist-Q2QzNScK.js">
+    <link rel="modulepreload" crossorigin href="./assets/dist-BFifaB39.js">
+    <link rel="modulepreload" crossorigin href="./assets/dist-D80s9YgJ.js">
+    <link rel="modulepreload" crossorigin href="./assets/dist-Nl79A0iO.js">
+    <link rel="modulepreload" crossorigin href="./assets/dist-CtJ8WONl.js">
+    <link rel="modulepreload" crossorigin href="./assets/stex-w1KpyykF.js">
+    <link rel="modulepreload" crossorigin href="./assets/_baseProperty-CIKnF2iY.js">
+    <link rel="modulepreload" crossorigin href="./assets/toNumber-CTOPJrpu.js">
+    <link rel="modulepreload" crossorigin href="./assets/now-B6JN1xKT.js">
+    <link rel="modulepreload" crossorigin href="./assets/debounce-70y9MzDK.js">
+    <link rel="modulepreload" crossorigin href="./assets/toInteger-Bor4StOs.js">
+    <link rel="modulepreload" crossorigin href="./assets/type-CYsuWFDa.js">
+    <link rel="modulepreload" crossorigin href="./assets/marked.esm-BB_RKOA5.js">
+    <link rel="modulepreload" crossorigin href="./assets/main-CCaZmKLi.js">
+    <link rel="modulepreload" crossorigin href="./assets/cells-BEhFXxEH.js">
+    <link rel="modulepreload" crossorigin href="./assets/kbd-CrDndhyw.js">
+    <link rel="modulepreload" crossorigin href="./assets/renderShortcut-Bjp5Xukk.js">
+    <link rel="modulepreload" crossorigin href="./assets/useEvent-itkPNnCe.js">
+    <link rel="modulepreload" crossorigin href="./assets/useDeleteCell-CIqS2s5l.js">
+    <link rel="modulepreload" crossorigin href="./assets/icons-15z_NdNZ.js">
+    <link rel="modulepreload" crossorigin href="./assets/spinner-fS9J74Ro.js">
+    <link rel="modulepreload" crossorigin href="./assets/datasource-CwGVmPnG.js">
+    <link rel="modulepreload" crossorigin href="./assets/add-missing-import-0FwDfOhv.js">
+    <link rel="modulepreload" crossorigin href="./assets/ansi_up-CAiCs1Gk.js">
+    <link rel="modulepreload" crossorigin href="./assets/blob-BC4M7Onc.js">
+    <link rel="modulepreload" crossorigin href="./assets/dom-Ckypy4pz.js">
+    <link rel="modulepreload" crossorigin href="./assets/errors-CmwnOe1B.js">
+    <link rel="modulepreload" crossorigin href="./assets/extends-B47kqttt.js">
+    <link rel="modulepreload" crossorigin href="./assets/objectWithoutPropertiesLoose-ClrKK0Xi.js">
+    <link rel="modulepreload" crossorigin href="./assets/esm-Bp1Lbm07.js">
+    <link rel="modulepreload" crossorigin href="./assets/es-Ctpp-mTr.js">
+    <link rel="modulepreload" crossorigin href="./assets/play-C5VC4Hal.js">
+    <link rel="modulepreload" crossorigin href="./assets/sparkles-DLotTEZ2.js">
+    <link rel="modulepreload" crossorigin href="./assets/shim-FF_l0CN4.js">
+    <link rel="modulepreload" crossorigin href="./assets/add-cell-with-ai-BQY4AwHL.js">
+    <link rel="modulepreload" crossorigin href="./assets/ErrorBoundary-Bj7QJPi8.js">
+    <link rel="modulepreload" crossorigin href="./assets/alert-dialog-DiIW1jDy.js">
+    <link rel="modulepreload" crossorigin href="./assets/dialog-gSaRWBIN.js">
+    <link rel="modulepreload" crossorigin href="./assets/useDebounce-BZnPO5jA.js">
+    <link rel="modulepreload" crossorigin href="./assets/numbers-P4hvbAnW.js">
+    <link rel="modulepreload" crossorigin href="./assets/context-BwP_-Md9.js">
+    <link rel="modulepreload" crossorigin href="./assets/useNumberFormatter-BQOmTFFk.js">
+    <link rel="modulepreload" crossorigin href="./assets/input-DGY-1Oes.js">
+    <link rel="modulepreload" crossorigin href="./assets/ImperativeModal-DSAh6fUR.js">
+    <link rel="modulepreload" crossorigin href="./assets/filename-dpoTdlj9.js">
+    <link rel="modulepreload" crossorigin href="./assets/cell-link-D8x9Ez3U.js">
+    <link rel="modulepreload" crossorigin href="./assets/alert-D4GhiyiD.js">
+    <link rel="modulepreload" crossorigin href="./assets/links-DH7hmhHO.js">
+    <link rel="modulepreload" crossorigin href="./assets/state-5DtoeNLQ.js">
+    <link rel="modulepreload" crossorigin href="./assets/MarimoErrorOutput-CD3rG7IK.js">
+    <link rel="modulepreload" crossorigin href="./assets/copy-BxPDuBrN.js">
+    <link rel="modulepreload" crossorigin href="./assets/copy-CGWkBrzb.js">
+    <link rel="modulepreload" crossorigin href="./assets/copy-icon-7_c6G_tO.js">
+    <link rel="modulepreload" crossorigin href="./assets/RenderHTML-B398JcWn.js">
+    <link rel="modulepreload" crossorigin href="./assets/emotion-is-prop-valid.esm-Tm8TdcWf.js">
+    <link rel="modulepreload" crossorigin href="./assets/with-selector-ChXsBWGQ.js">
+    <link rel="modulepreload" crossorigin href="./assets/JsonOutput-BU4PIFXg.js">
+    <link rel="modulepreload" crossorigin href="./assets/_arrayReduce-DDpPg0Qh.js">
+    <link rel="modulepreload" crossorigin href="./assets/startCase-DOk4LYuA.js">
+    <link rel="modulepreload" crossorigin href="./assets/strings-CrHTFiMt.js">
+    <link rel="modulepreload" crossorigin href="./assets/command-W6QvsWS0.js">
+    <link rel="modulepreload" crossorigin href="./assets/popover-IOch2AIR.js">
+    <link rel="modulepreload" crossorigin href="./assets/table-CMFDmrFM.js">
+    <link rel="modulepreload" crossorigin href="./assets/tabs-CswUuyA0.js">
+    <link rel="modulepreload" crossorigin href="./assets/useAsyncData-BB0ZlY9B.js">
+    <link rel="modulepreload" crossorigin href="./assets/LazyAnyLanguageCodeMirror-CInCxHCy.js">
+    <link rel="modulepreload" crossorigin href="./assets/error-banner-CHF-jGs2.js">
+    <link rel="modulepreload" crossorigin href="./assets/defaultLocale-DEWTIUVh.js">
+    <link rel="modulepreload" crossorigin href="./assets/precisionRound-BLxyDkD7.js">
+    <link rel="modulepreload" crossorigin href="./assets/defaultLocale-B9-NA0ur.js">
+    <link rel="modulepreload" crossorigin href="./assets/vega-loader.browser.module-B3yPAbRZ.js">
+    <link rel="modulepreload" crossorigin href="./assets/loader-BcHzCbiy.js">
+    <link rel="modulepreload" crossorigin href="./assets/formats-Dbfcbsil.js">
+    <link rel="modulepreload" crossorigin href="./assets/en-US-D7J6fBFv.js">
+    <link rel="modulepreload" crossorigin href="./assets/isValid-BxWQIw0s.js">
+    <link rel="modulepreload" crossorigin href="./assets/dates-D2l0yAKQ.js">
+    <link rel="modulepreload" crossorigin href="./assets/download-RtEDTktT.js">
+    <link rel="modulepreload" crossorigin href="./assets/maps-duCv2i7k.js">
+    <link rel="modulepreload" crossorigin href="./assets/useDateFormatter-BapFytxP.js">
+    <link rel="modulepreload" crossorigin href="./assets/range-BB1DXJJn.js">
+    <link rel="modulepreload" crossorigin href="./assets/list-filter-DQ2_e3bh.js">
+    <link rel="modulepreload" crossorigin href="./assets/columns-BeFC1dXm.js">
+    <link rel="modulepreload" crossorigin href="./assets/focus-BP3h9dJJ.js">
+    <link rel="modulepreload" crossorigin href="./assets/useInstallPackage-CDwTdPy7.js">
+    <link rel="modulepreload" crossorigin href="./assets/column-preview-CC6unPyM.js">
+    <link rel="modulepreload" crossorigin href="./assets/useAddCell-ClSRUhA6.js">
+    <link rel="modulepreload" crossorigin href="./assets/toggle-DL9DPBMc.js">
+    <link rel="modulepreload" crossorigin href="./assets/useHotkey-CivJpvvx.js">
+    <link rel="modulepreload" crossorigin href="./assets/globals-BGEnYYSz.js">
+    <link rel="modulepreload" crossorigin href="./assets/mode-kUHLEZT6.js">
+    <link rel="modulepreload" crossorigin href="./assets/share-ChWJhz87.js">
+    <link rel="modulepreload" crossorigin href="./assets/dist-I8SxGjN9.js">
+    <link rel="modulepreload" crossorigin href="./assets/memoize-CAcr7Wct.js">
+    <link rel="modulepreload" crossorigin href="./assets/_toKey-Di_xoXjD.js">
+    <link rel="modulepreload" crossorigin href="./assets/_baseSet-Dmzd-CnA.js">
+    <link rel="modulepreload" crossorigin href="./assets/utilities.esm-Dj3BexHh.js">
+    <link rel="modulepreload" crossorigin href="./assets/floating-outline-CwHsH4x8.js">
+    <link rel="modulepreload" crossorigin href="./assets/eye-off-wMFrY47K.js">
+    <link rel="modulepreload" crossorigin href="./assets/plus-Ckxr6pwY.js">
+    <link rel="modulepreload" crossorigin href="./assets/readonly-python-code-DI18L7Ip.js">
+    <link rel="modulepreload" crossorigin href="./assets/file-video-camera-D5oKA5-e.js">
+    <link rel="modulepreload" crossorigin href="./assets/file-text-Ds68BFYI.js">
+    <link rel="modulepreload" crossorigin href="./assets/file-BX8VjCCQ.js">
+    <link rel="modulepreload" crossorigin href="./assets/types-Zo5TA9DG.js">
+    <link rel="modulepreload" crossorigin href="./assets/label-CFxcdBki.js">
+    <link rel="modulepreload" crossorigin href="./assets/form-mBAxBzPt.js">
+    <link rel="modulepreload" crossorigin href="./assets/textarea-BcNYHZLG.js">
+    <link rel="modulepreload" crossorigin href="./assets/circle-x-CPCvpiTN.js">
+    <link rel="modulepreload" crossorigin href="./assets/refresh-ccw-D1hQMnx_.js">
+    <link rel="modulepreload" crossorigin href="./assets/trash-2-Cex53SxB.js">
+    <link rel="modulepreload" crossorigin href="./assets/form-CN-qI0dC.js">
+    <link rel="modulepreload" crossorigin href="./assets/field-D-WfasXC.js">
+    <link rel="modulepreload" crossorigin href="./assets/switch-C2Bk9ykO.js">
+    <link rel="modulepreload" crossorigin href="./assets/useBoolean-7LAl9weo.js">
+    <link rel="modulepreload" crossorigin href="./assets/useDeepCompareMemoize-CbO9MTKn.js">
+    <link rel="modulepreload" crossorigin href="./assets/types-TRUculCV.js">
+    <link rel="modulepreload" crossorigin href="./assets/prop-types-ShpF60yB.js">
+    <link rel="modulepreload" crossorigin href="./assets/es-W4OhtMWM.js">
+    <link rel="modulepreload" crossorigin href="./assets/VisuallyHidden-BfudlHw2.js">
+    <link rel="modulepreload" crossorigin href="./assets/_baseFlatten-8yEsQJi9.js">
+    <link rel="modulepreload" crossorigin href="./assets/get-BYzWDFJH.js">
+    <link rel="modulepreload" crossorigin href="./assets/hasIn-WaG0qjy7.js">
+    <link rel="modulepreload" crossorigin href="./assets/_basePickBy-6ZBTv_cn.js">
+    <link rel="modulepreload" crossorigin href="./assets/pick-BZA77Trx.js">
+    <link rel="modulepreload" crossorigin href="./assets/square-DpWGO_-7.js">
+    <link rel="modulepreload" crossorigin href="./assets/chart-no-axes-column-3piSAXMi.js">
+    <link rel="modulepreload" crossorigin href="./assets/download-CHejLEQn.js">
+    <link rel="modulepreload" crossorigin href="./assets/globe-TqnwljOq.js">
+    <link rel="modulepreload" crossorigin href="./assets/send-D9MERKWw.js">
+    <link rel="modulepreload" crossorigin href="./assets/refresh-cw-CmHE3eNl.js">
+    <link rel="modulepreload" crossorigin href="./assets/settings-ByREbWaw.js">
+    <link rel="modulepreload" crossorigin href="./assets/square-function-B5j-8u3J.js">
+    <link rel="modulepreload" crossorigin href="./assets/bundle.esm-BoludFkg.js">
+    <link rel="stylesheet" crossorigin href="./assets/documentation-BvrC6Bsv.css">
+    <link rel="stylesheet" crossorigin href="./assets/columns-j3zW187k.css">
+    <link rel="stylesheet" crossorigin href="./assets/index-DrbV-Ps3.css">
+  <marimo-wasm hidden=""></marimo-wasm>
+    <script>
+        if (window.location.protocol === 'file:') {
+            alert('Warning: This file must be served by an HTTP server to function correctly.');
+        }
+    </script>
+    
+    <style>
+        #save-button {
+            display: none !important;
+        }
+        #filename-input {
+            display: none !important;
+        }
+    </style>
+    <marimo-code hidden="">import%20marimo%0A%0A__generated_with%20%3D%20%220.17.0%22%0Aapp%20%3D%20marimo.App(width%3D%22medium%22)%0A%0A%0A%40app.cell%0Adef%20_()%3A%0A%20%20%20%20import%20pandas%20as%20pd%0A%20%20%20%20import%20numpy%20as%20np%0A%20%20%20%20from%20sklearn%20import%20datasets%0A%20%20%20%20from%20sklearn.model_selection%20import%20train_test_split%0A%20%20%20%20from%20sklearn.metrics%20import%20classification_report%0A%20%20%20%20from%20collections%20import%20Counter%2C%20namedtuple%0A%20%20%20%20import%20random%0A%20%20%20%20from%20typing%20import%20Callable%2C%20Dict%2C%20List%2C%20Union%2C%20Tuple%0A%20%20%20%20from%20numpy.typing%20import%20NDArray%0A%20%20%20%20SEED%20%3D%2042%20%0A%20%20%20%20random.seed(SEED)%0A%20%20%20%20np.random.seed(SEED)%0A%20%20%20%20return%20(%0A%20%20%20%20%20%20%20%20Callable%2C%0A%20%20%20%20%20%20%20%20Counter%2C%0A%20%20%20%20%20%20%20%20Dict%2C%0A%20%20%20%20%20%20%20%20NDArray%2C%0A%20%20%20%20%20%20%20%20classification_report%2C%0A%20%20%20%20%20%20%20%20datasets%2C%0A%20%20%20%20%20%20%20%20namedtuple%2C%0A%20%20%20%20%20%20%20%20np%2C%0A%20%20%20%20%20%20%20%20train_test_split%2C%0A%20%20%20%20)%0A%0A%0A%40app.cell%0Adef%20_(Callable%2C%20Counter%2C%20Dict%2C%20NDArray%2C%20namedtuple%2C%20np)%3A%0A%20%20%20%20%22%22%22%0A%20%20%20%20For%20this%20whole%20example%2C%20we%20take%20the%20perspective%20of%20a%20teacher%20trying%20to%20seperate%20a%20group%20of%20students%20standing%20infront%20of%20him%20for%20a%20game%20of%20tag%20(runners%20and%20catchers).%20The%20teacher%20wants%20to%20do%20this%20based%20on%20some%20information%20about%20each%20student%20and%20some%20information%20about%20which%20group%20they%20were%20in%20the%20last%20time%20they%20played.%20%0A%20%20%20%20%22%22%22%0A%0A%20%20%20%20Partition%20%3D%20namedtuple(%22partition%22%2C%20%5B%22X_left%22%2C%20%22y_left%22%2C%20%22n_left%22%2C%22X_right%22%2C%20%22y_right%22%2C%20%22n_right%22%5D)%0A%20%20%20%20Threshold%20%3D%20namedtuple(%22threshold%22%2C%20%5B%22inf_gain%22%2C%20%22threshold_at%22%5D)%0A%20%20%20%20TopFeature%20%3D%20namedtuple(%22topfeature%22%2C%20%5B'feature'%2C%20'threshold'%5D)%0A%20%20%20%20NO_VALID_SPLIT%20%3D%20Threshold(inf_gain%3D-1%2C%20threshold_at%3DNone)%0A%0A%20%20%20%20def%20class_counts(y%3A%20NDArray%5Bnp.int64%5D)%20-%3E%20Dict%5Bint%2C%20int%5D%3A%0A%20%20%20%20%20%20%20%20return%20dict(Counter(y))%0A%0A%20%20%20%20def%20gini(y%3A%20NDArray%5Bnp.int64%5D)%20-%3E%20float%3A%0A%20%20%20%20%20%20%20%20%22%22%22%0A%20%20%20%20%20%20%20%20Calculate%20the%20impurity%20of%20a%20collection.%0A%0A%20%20%20%20%20%20%20%20Gini%20impurity%20is%20defined%20as%201%20minus%20the%20sum%20of%20squared%20probability%20of%20picking%20each%20%0A%20%20%20%20%20%20%20%20class%20of%20elements.%20This%20is%20a%20value%20%5B0%2C1%5D%20-%3E%20%5Bpure%2C%20impure%5D%0A%0A%20%20%20%20%20%20%20%20For%20example%2C%20if%20a%20bag%20with%202%20possible%20classes%20(red%20and%20blue)%20has%205%20red%20and%205%20blue%2C%20you%20have%20equal%20probability%20of%20picking%20each%20color.%20This%20is%20defined%20as%20high%20impurity.%20If%20one%20class%20dominates%20(9%20red%2C%201%20blue)%20you%20have%20a%20much%20higher%20probability%20of%20picking%20red.%20This%20is%20low%20impurity.%20%0A%0A%20%20%20%20%20%20%20%20Why%20squared%20probability%20%3A%20%0A%20%20%20%20%20%20%20%20%20%20%20%20p%20%3C%3D%201%20%3A%20squaring%20has%20the%20effect%20of%20amplifying%20high%20probabilities.%20%0A%20%20%20%20%20%20%20%20%20%20%20%20if%20a%20collection%20has%20low%20impurity%2C%20means%20one%20of%20the%20items%20in%20the%20collection%20%0A%20%20%20%20%20%20%20%20%20%20%20%20occurs%20most%20in%20the%20collection.%0A%20%20%20%20%20%20%20%20%22%22%22%0A%20%20%20%20%20%20%20%20counts%20%3D%20class_counts(y)%0A%20%20%20%20%20%20%20%20if%20len(y)%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20return%20np.array(%5B0%5D)%0A%20%20%20%20%20%20%20%20N%20%3D%20len(y)%0A%20%20%20%20%20%20%20%20p%20%3D%201%20-%20np.sum((np.array(list(counts.values()))%20%2F%20N)**2)%0A%20%20%20%20%20%20%20%20return%20p%0A%0A%20%20%20%20def%20get_partition(%0A%20%20%20%20%20%20%20%20X%20%3A%20NDArray%5Bnp.float64%5D%2C%20%0A%20%20%20%20%20%20%20%20y%3A%20NDArray%5Bnp.int64%5D%2C%20%0A%20%20%20%20%20%20%20%20feature_index%3A%20int%2C%20%0A%20%20%20%20%20%20%20%20threshold%3A%20float%0A%20%20%20%20%20%20%20%20)%20-%3E%20Partition%3A%0A%20%20%20%20%20%20%20%20%22%22%22%0A%20%20%20%20%20%20%20%20Parition%20a%20given%20set%20of%20examples%20(X)%20on%20feature_index%20and%20threshold.%0A%0A%20%20%20%20%20%20%20%20Given%20a%20collection%20of%20examples%2C%20we%20ask%20a%20question%20about%20where%20it%20falls%20relative%20to%20a%20threshold%20and%20split%20the%20data%20accordingly.%20%0A%20%20%20%20%20%20%20%20%22%22%22%0A%20%20%20%20%20%20%20%20feature%20%3D%20X%5B%3A%2Cfeature_index%5D%0A%20%20%20%20%20%20%20%20where_left%20%3D%20np.where(feature%20%3C%3D%20threshold)%5B0%5D%0A%20%20%20%20%20%20%20%20where_right%20%3D%20np.where(feature%20%3E%20threshold)%5B0%5D%0A%20%20%20%20%20%20%20%20X_left%20%3D%20X%5Bwhere_left%2C%3A%5D%0A%20%20%20%20%20%20%20%20y_left%20%3D%20y%5Bwhere_left%5D%0A%20%20%20%20%20%20%20%20X_right%20%3D%20X%5Bwhere_right%2C%3A%5D%0A%20%20%20%20%20%20%20%20y_right%20%3D%20y%5Bwhere_right%5D%0A%20%20%20%20%20%20%20%20n_left%20%3D%20X_left.shape%5B0%5D%0A%20%20%20%20%20%20%20%20n_right%20%3D%20X_right.shape%5B0%5D%0A%0A%20%20%20%20%20%20%20%20p%20%3D%20Partition(X_left%2C%20y_left%2C%20n_left%2C%20X_right%2C%20y_right%2C%20%20n_right)%0A%20%20%20%20%20%20%20%20return(p)%0A%0A%20%20%20%20def%20candidate_thresholds(%0A%20%20%20%20%20%20%20%20X%3A%20NDArray%5Bnp.float64%5D%2C%20%0A%20%20%20%20%20%20%20%20y%3A%20NDArray%5Bnp.int64%5D%2C%0A%20%20%20%20%20%20%20%20feature_index%20%3A%20int%0A%20%20%20%20)-%3E%20NDArray%5Bnp.int64%5D%3A%0A%20%20%20%20%20%20%20%20%22%22%22Suggest%20thresholds%20to%20split%20on.%20%0A%0A%20%20%20%20%20%20%20%20A%20given%20feature%20can%20be%20split%20in%20any%20number%20of%20points%20along%20its%20possible%20range%20of%20values.%20Here%20we%20find%20some%20candidate%20thresholds%20according%20to%20this%20formula%3A%0A%0A%20%20%20%20%20%20%20%201)%20The%20feature%20is%20sorted%20(labels%20are%20kept%20alligned%20with%20the%20sorting)%0A%20%20%20%20%20%20%20%202)%20Compare%20adjacent%20values%0A%20%20%20%20%20%20%20%20%20%20%20%20For%20two%20examples%20X%5Bi%5D%2C%20X%5Bj%5D%20%3A%20i%20%3C%20j%2C%20check%20if%20the%20label%20between%20these%20two%20examples%0A%20%20%20%20%20%20%20%20%20%20%20%20AND%20feature%20values%20are%20different.%0A%20%20%20%20%20%20%20%203)%20If%20they%20are%2C%20suggest%20a%20threshold%20at%20the%20mid%20point%20of%20these%20two%20values.%0A%0A%20%20%20%20%20%20%20%20Intuitively%2C%20we%20want%20to%20understand%20how%20a%20change%20in%20a%20given%20feature%20value%20(e.g.%2C%20number%20of%20times%20as%20catcher)%20changes%20the%20predicted%20group.%20So%20we%20are%20only%20looking%20at%20thresholds%20where%20this%20happens.%20%0A%20%20%20%20%20%20%20%20%22%22%22%0A%20%20%20%20%20%20%20%20sorting_indices%20%3D%20np.argsort(X%5B%3A%2Cfeature_index%5D)%0A%20%20%20%20%20%20%20%20sorted_y%20%3D%20y%5Bsorting_indices%5D%0A%20%20%20%20%20%20%20%20sorted_X%20%3D%20X%5Bsorting_indices%2Cfeature_index%5D%0A%20%20%20%20%20%20%20%20n_comparisons%20%3D%20len(sorted_y)%20-1%0A%20%20%20%20%20%20%20%20i_j%20%3D%20zip(range(n_comparisons)%2C%20range(1%2C%20n_comparisons%20%2B%201))%0A%20%20%20%20%20%20%20%20thresholds%20%3D%20%5B%5D%0A%20%20%20%20%20%20%20%20for%20i%2C%20j%20in%20i_j%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20if%20(sorted_y%5Bi%5D%20!%3D%20sorted_y%5Bj%5D)%20and%20(sorted_X%5Bi%5D%20!%3D%20sorted_X%5Bj%5D)%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20thresholds.append(float((sorted_X%5Bi%5D%20%2B%20sorted_X%5Bj%5D)%2F2))%0A%20%20%20%20%20%20%20%20return%20np.array(sorted(thresholds))%0A%0A%20%20%20%20def%20impurity_after_split(%0A%20%20%20%20%20%20%20%20y_left%20%3A%20NDArray%5Bnp.int64%5D%2C%0A%20%20%20%20%20%20%20%20y_right%20%3A%20NDArray%5Bnp.int64%5D%2C%0A%20%20%20%20%20%20%20%20impurity_fn%20%3A%20Callable%5B%5BNDArray%5Bnp.int64%5D%5D%2C%20float%5D%20%3D%20gini)%3A%0A%20%20%20%20%20%20%20%20%22%22%22%0A%20%20%20%20%20%20%20%20Calculate%20the%20impurity%20of%20a%20split.%20%0A%0A%20%20%20%20%20%20%20%20At%20each%20split%20point%2C%20we%20seperate%20the%20data%20into%20two%20spaces%20(left%20and%20right).%0A%20%20%20%20%20%20%20%20The%20impurity%20of%20a%20split%20measures%20the%20mixture%20of%20labels%20in%20each%20of%20the%20branches.%0A%20%20%20%20%20%20%20%20If%20a%20branch%20has%20a%20high%20variety%20of%20data%20points%2C%20its%20high%20impurity.%0A%0A%20%20%20%20%20%20%20%20For%20example%2C%20say%20you%20bought%20a%20protein%20supplement.%20If%20it's%20tested%20and%20it%20has%2099.99%25%20protein%2C%0A%20%20%20%20%20%20%20%20then%20it%20has%20high%20purity.%20On%20the%20other%20hand%20if%20twas%2070%25%20protein%2C%2015%25%20carb%20and%2015%25%20fat.%20It%20%0A%20%20%20%20%20%20%20%20is%20low%20in%20purity.%20%0A%0A%20%20%20%20%20%20%20%20Intuitively%2C%20each%20time%20we%20ask%20a%20question%20(i.e.%2C%20split%20on%20feature%20and%20threshold)%20we%20should%20seperate%20examples%20into%20neater%20groups.%20Suppose%20you%20have%20to%20seperate%20a%20group%20of%20students%20into%20two%20different%20groups%20(runners%20and%20catchers%20in%20a%20game%20of%20tag).%20What%20you%20want%20at%20the%20end%20of%20the%20process%20is%20to%20go%20from%20a%20single%20mixed%20group%20of%20students%20to%20two%20groups%20where%20everyone%20is%20in%20the%20group%20they%20should%20be%20in.%20Everyone%20starts%20out%20mixed%20together%20in%20front%20of%20you%20(i.e.%2C%20a%20high%20impurity%20group).%20First%20you%20ask%2C%20say%2C%20who%20has%20been%20a%20catcher%203%20or%20more%20times%20%3F%20Now%20you%20have%20two%20groups.%20Each%20group%20should%20have%20more%20of%20one%20class%20(catcher%20or%20runner)%20-%3E%20lower%20impurity%20than%20the%20original%20group.%20Otherwise%2C%20your%20question%20was%20not%20very%20good%20(impurity%20does%20not%20go%20down%20much).%20%0A%0A%20%20%20%20%20%20%20%20why%20do%20the%20weighted%20average%20of%20both%20sides%3F%0A%0A%20%20%20%20%20%20%20%20The%20problem%20is%20to%20measure%20the%20impurity%20of%20the%20new%20state%20we%20have%20ended%20up%20in.%20This%20means%20summing%20up%20the%20two%20impurities%20of%20each%20side.%20However%2C%20this%20will%20be%20a%20value%20%3E%201.%20For%20example%2C%20suppose%20the%20original%20group%20is%20a%2050%2F50%20runners%20%3A%20catchers%2C%20this%20is%20impurity%200.5.%20%20If%20both%20new%20groups%20get%20the%20same%20number%20of%20students%20again%20(each%2050%2F50)%2C%20this%20is%20also%200.5.If%20we%20sum%2C%200.5%20%2B%200.5%20%3D%201%20-%3E%20twice%20as%20bad%20as%20we%20started%20but%20when%20in%20reality%2C%20its%20the%20same%20level%20of%20%22badness%22.%20%0A%20%20%20%20%20%20%20%20%22%22%22%0A%20%20%20%20%20%20%20%20n_left%20%3D%20len(y_left)%0A%20%20%20%20%20%20%20%20n_right%20%3D%20len(y_right)%0A%20%20%20%20%20%20%20%20n%20%3D%20n_left%20%2B%20n_right%0A%20%20%20%20%20%20%20%20weighted_average_impurity%20%3D%20(n_left%2Fn)*impurity_fn(y_left)%20%2B%20(n_right%2Fn)*impurity_fn(y_right)%0A%20%20%20%20%20%20%20%20return%20weighted_average_impurity%0A%0A%0A%20%20%20%20def%20information_gain(%0A%20%20%20%20%20%20%20%20y_parent%20%3A%20NDArray%5Bnp.int64%5D%2C%0A%20%20%20%20%20%20%20%20y_left%20%3A%20NDArray%5Bnp.int64%5D%2C%0A%20%20%20%20%20%20%20%20y_right%20%3A%20NDArray%5Bnp.int64%5D%2C%0A%20%20%20%20%20%20%20%20impurity_fn%20%3A%20Callable%5B%5BNDArray%5Bnp.int64%5D%5D%2C%20float%5D%3D%20gini)%3A%0A%20%20%20%20%20%20%20%20%22%22%22%0A%20%20%20%20%20%20%20%20Calculate%20the%20information%20gain%20from%20a%20given%20split.%20%0A%0A%20%20%20%20%20%20%20%20Following%20from%20above%2C%20this%20is%20a%20measure%20of%20how%20good%20your%20question%20was.%20As%20you%20reduce%20the%20impurity%20of%20your%20groups%20with%20each%20successful%20question%2C%20you%20gain%20information%20about%20each%20sample%20(e.g.%2C%20if%20alex%20has%20been%20a%20catcher%20%3E%203%20times%20this%20week%2C%20came%20to%20school%204%20times%20this%20week%20and%20they%20do%20not%20want%20to%20be%20a%20catcher%20-%3E%20runner%20%3A%20We%20have%20a%20lot%20of%20information%20about%20Alex)%0A%20%20%20%20%20%20%20%20%22%22%22%0A%20%20%20%20%20%20%20%20return%20impurity_fn(y_parent)%20-%20impurity_after_split(y_left%2C%20y_right)%0A%0A%20%20%20%20def%20best_split_for_feature(%0A%20%20%20%20%20%20%20%20X%20%3A%20NDArray%5Bnp.float64%5D%2C%0A%20%20%20%20%20%20%20%20y%20%3A%20NDArray%5Bnp.float64%5D%2C%0A%20%20%20%20%20%20%20%20feature_index%20%3A%20int%2C%20%0A%20%20%20%20%20%20%20%20impurity_fn%20%3A%20Callable%5B%5BNDArray%5Bnp.int64%5D%5D%2C%20float%5D%3D%20gini%2C%0A%20%20%20%20%20%20%20%20min_samples_leaf%3A%20int%20%3D1)%3A%0A%20%20%20%20%20%20%20%20%22%22%22%0A%20%20%20%20%20%20%20%20Decide%20on%20the%20best%20split%20for%20a%20given%20feature%20by%20information%20gain.%20This%20brings%20together%20all%20of%20the%20functions%20above.%0A%20%20%20%20%20%20%20%20that%20is%3A%0A%0A%20%20%20%20%20%20%20%201)%20You%20collect%20a%20group%20of%20possible%20questions%20for%20a%20given%20feature.%20(e.g.%2C%20number%20of%20times%20as%20catcher)%20(candidate_thresholds)%0A%20%20%20%20%20%20%20%202)%20Check%20how%20good%20each%20question%20does%20at%20seperating%20your%20given%20group%20(get_partition%2C%20information_gain)%0A%20%20%20%20%20%20%20%203)%20Select%20the%20best%20question%20(best%20information%20gain).%0A%0A%20%20%20%20%20%20%20%20Why%20favor%20the%20smaller%20threshold%20%3F%0A%20%20%20%20%20%20%20%20%20%20%20%20for%20consistency.%20It's%20not%20otherwise%20important.%0A%0A%20%20%20%20%20%20%20%20We%20save%20splits%20that%20result%20in%20no%20information%20gain%20with%20a%20threshold%20of%20%22None%22%0A%20%20%20%20%20%20%20%20%22%22%22%0A%20%20%20%20%20%20%20%20thresholds%20%3D%20candidate_thresholds(X%2C%20y%2C%20feature_index)%0A%20%20%20%20%20%20%20%20gains_at_thresholds%20%3D%20%5B%5D%0A%20%20%20%20%20%20%20%20for%20threshold%20in%20thresholds%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20partition%20%3D%20get_partition(X%2C%20y%2C%20feature_index%2C%20threshold%20%3D%20threshold)%0A%20%20%20%20%20%20%20%20%20%20%20%20if%20(partition.n_left%20%3C%20min_samples_leaf)%20or%20(partition.n_right%20%3C%20min_samples_leaf)%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20continue%0A%20%20%20%20%20%20%20%20%20%20%20%20inf_gain%20%3D%20information_gain(y%2C%20partition.y_left%2C%20partition.y_right%2C%20impurity_fn)%0A%20%20%20%20%20%20%20%20%20%20%20%20if%20inf_gain%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20threshold%20%3D%20None%0A%20%20%20%20%20%20%20%20%20%20%20%20gains_at_thresholds.append(Threshold(inf_gain%2C%20threshold))%0A%20%20%20%20%20%20%20%20if%20len(gains_at_thresholds)%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20return%20NO_VALID_SPLIT%0A%20%20%20%20%20%20%20%20best_split%20%3D%20sorted(gains_at_thresholds%2C%20key%20%3D%20lambda%20x%20%3A%20x.inf_gain%2C%20reverse%3DTrue)%5B0%5D%0A%20%20%20%20%20%20%20%20return%20best_split%0A%0A%20%20%20%20def%20best_split_overall(%0A%20%20%20%20%20%20%20%20X%20%3A%20NDArray%5Bnp.float64%5D%2C%20%0A%20%20%20%20%20%20%20%20y%20%3A%20NDArray%5Bnp.float64%5D%2C%0A%20%20%20%20%20%20%20%20feature_indices%20%3A%20NDArray%5Bnp.float64%5D%20%3D%20None%2C%0A%20%20%20%20%20%20%20%20impurity_fn%20%3ACallable%5B%5BNDArray%5Bnp.int64%5D%5D%2C%20float%5D%3D%20gini%2C%0A%20%20%20%20%20%20%20%20min_samples_leaf%20%3D%201)%3A%0A%20%20%20%20%20%20%20%20%22%22%22%0A%20%20%20%20%20%20%20%20From%20all%20the%20possible%20features%20at%20a%20node%2C%20pick%20the%20feature%20%2B%20threshold%20that%20maximizes%20information%20gain.%0A%0A%20%20%20%20%20%20%20%20We%20want%20to%20sequentially%20ask%20better%20and%20better%20questions.%20For%20a%20given%20set%20of%20features%2C%20one%20feature%20will%20seperate%20students%20the%20best.%20Here%2C%20we%20find%20that%20question.%20%0A%20%20%20%20%20%20%20%20%22%22%22%0A%20%20%20%20%20%20%20%20n_features%20%3D%20X.shape%5B1%5D%0A%20%20%20%20%20%20%20%20if%20not%20feature_indices%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20feature_indices%20%3D%20range(n_features)%0A%0A%20%20%20%20%20%20%20%20highest_gain%20%3D%20TopFeature(None%2C%20Threshold(-1%2C-1))%0A%20%20%20%20%20%20%20%20for%20feature%20in%20feature_indices%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20best_feature_split%20%3D%20best_split_for_feature(X%2C%20y%2C%20feature%2Cimpurity_fn)%0A%20%20%20%20%20%20%20%20%20%20%20%20if%20best_feature_split.inf_gain%20%3E%20highest_gain.threshold.inf_gain%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20highest_gain%20%3D%20TopFeature(feature%20%3D%20feature%2C%20threshold%3D%20best_feature_split)%0A%20%20%20%20%20%20%20%20return%20highest_gain%0A%0A%0A%20%20%20%20class%20Node%3A%0A%20%20%20%20%20%20%20%20%22%22%22%0A%20%20%20%20%20%20%20%20A%20decision%20tree%20is%20a%20path%20that%20a%20given%20datapoint%20must%20take%20until%20it%20finally%20gets%20to%20a%20point%20where%20a%20prediction%20can%20be%20assigned%20to%20it.%20%0A%0A%20%20%20%20%20%20%20%20Each%20fork%20on%20this%20path%20is%20a%20node.%20%20%0A%0A%20%20%20%20%20%20%20%20A%20node%20can%20serve%20two%20roles%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20A%20question%20%3A%20This%20splits%20the%20data%20in%20two%20depending%20on%20the%20answer%20to%20the%20question%20being%20asked.%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20A%20question%20node%20asks%20only%20one%20question%20about%20one%20feature%20of%20the%20data%20point%20(e.g.%2C%20is%20age%20%3C%205%20or%20%3E%205%20%3F)%0A%20%20%20%20%20%20%20%20%20%20%20%20A%20prediction%20%3A%20When%20there%20are%20no%20more%20questions%20to%20be%20asked%2C%20and%20a%20prediction%20must%20be%20made.%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20A%20prediction%20node%20gives%20only%20one%20prediction%20for%20the%20data%20point%20as%20the%20most%20frequent%20(or%20average)%20prediction%20for%20all%20data%20points%20in%20that%20node.%20%0A%0A%20%20%20%20%20%20%20%20What%20are%20the%20attributes%20of%20a%20node%20%3F%20%0A%20%20%20%20%20%20%20%20%20%20%20%20Feature%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20Each%20node%20asks%20a%20question%20about%20a%20single%20feature.%20%0A%20%20%20%20%20%20%20%20%20%20%20%20Threshold%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20The%20value%20to%20split%20on%20for%20the%20given%20feature.%0A%20%20%20%20%20%20%20%20%20%20%20%20Children%20nodes%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20Every%20time%20there%20is%20a%20fork%20in%20the%20road%2C%20we%20have%20two%20new%20paths%20formed.%20This%20is%20represented%20by%20links%20to%20two%20other%20nodes%20(the%20data%20points%20%3C%20age%205%20and%20%3E%20age%205).%20%0A%20%20%20%20%20%20%20%20%22%22%22%0A%20%20%20%20%20%20%20%20def%20__init__(self%2C%20feature%20%3D%20None%2C%20threshold%20%3D%20None%2C%20left%20%3D%20None%2C%20right%20%3D%20None%2C%20value%3D%20None)%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20self.feature%20%3D%20feature%0A%20%20%20%20%20%20%20%20%20%20%20%20self.threshold%20%3D%20threshold%0A%20%20%20%20%20%20%20%20%20%20%20%20self.left%20%3D%20left%0A%20%20%20%20%20%20%20%20%20%20%20%20self.right%20%3D%20right%0A%20%20%20%20%20%20%20%20%20%20%20%20self.value%20%3D%20value%20%0A%0A%20%20%20%20def%20build_tree(%20X%20%3A%20NDArray%5Bnp.float64%5D%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20y%20%3A%20NDArray%5Bnp.float64%5D%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20depth%20%3D%200%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20max_depth%20%3D%205%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20min_samples_split%20%3D2)%3A%0A%20%20%20%20%20%20%20%20%22%22%22%0A%20%20%20%20%20%20%20%20Using%20nodes%2C%20build%20a%20tree%20recursively.%20%0A%20%20%20%20%20%20%20%20At%20the%20end%20of%20this%20recursion%2C%20return%20a%20Node%20that%20is%20the%20root%20node%20of%20the%20tree.%0A%0A%20%20%20%20%20%20%20%20This%20brings%20all%20the%20functions%20above%20together%20to%20sequentially%20build%20all%20the%20layers%20of%20our%20decision%20tree%2C%20taking%20us%20from%20a%20mixed%20group%20of%20students%20to%20two%20groups%2C%20each%20as%20pure%20as%20possible%20without%20fitting%20too%20closely%20to%20the%20training%20data%20by%20controlling%20tree_depth%20(we%20may%20want%20to%20use%20this%20algorithm%20on%20a%20different%20group%20of%20students).%20%0A%20%20%20%20%20%20%20%20%22%22%22%20%0A%20%20%20%20%20%20%20%20samples%20%3D%20X.shape%5B0%5D%0A%20%20%20%20%20%20%20%20counts%20%3D%20class_counts(y)%0A%20%20%20%20%20%20%20%20most_common_class%20%3D%20max(counts%2C%20key%3Dcounts.get)%0A%20%20%20%20%20%20%20%20if%20(depth%20%3D%3D%20max_depth)%20or%20(samples%20%3C%20min_samples_split)%20or%20(len(counts)%20%3D%3D%201)%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20return%20Node(value%3Dmost_common_class)%0A%20%20%20%20%20%20%20%20best_split%20%3D%20best_split_overall(X%2C%20y)%0A%20%20%20%20%20%20%20%20if%20best_split.threshold.inf_gain%20%3D%3D%20float(0)%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20return%20Node(value%20%3D%20most_common_class)%0A%20%20%20%20%20%20%20%20split%20%3D%20get_partition(X%2C%20y%20%2C%20feature_index%3Dbest_split.feature%2C%20threshold%3Dbest_split.threshold.threshold_at)%0A%0A%20%20%20%20%20%20%20%20%23%20build%20branches%0A%20%20%20%20%20%20%20%20left_subtree%20%3D%20build_tree(split.X_left%2C%20split.y_left%2C%20depth%20%2B%201%2C%20max_depth%20%3D%20max_depth%2C%20min_samples_split%3D%20min_samples_split)%0A%20%20%20%20%20%20%20%20right_subtree%20%3D%20build_tree(split.X_right%2C%20split.y_right%2C%20depth%20%2B%201%2C%20max_depth%20%3D%20max_depth%2C%20min_samples_split%3Dmin_samples_split)%0A%20%20%20%20%20%20%20%20return%20Node(feature%3Dbest_split.feature%2C%20threshold%3Dbest_split.threshold%2C%20left%20%3D%20left_subtree%2C%20right%3Dright_subtree)%0A%0A%20%20%20%20def%20predict_one(tree%3A%20Node%2C%20sample%3A%20NDArray%5Bnp.int64%5D)%3A%0A%20%20%20%20%20%20%20%20%22%22%22%0A%20%20%20%20%20%20%20%20Given%20a%20tree%20and%20an%20example%2C%20predict%20its%20label.%20%0A%20%20%20%20%20%20%20%20Starting%20from%20the%20root%20node%2C%20travel%20down%20the%20tree%20for%20a%20given%20example%20until%20the%20final%20node%20is%20reached.%0A%20%20%20%20%20%20%20%20%22%22%22%0A%20%20%20%20%20%20%20%20if%20tree.value%20!%3D%20None%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20return%20tree.value%0A%20%20%20%20%20%20%20%20node_feature%20%3D%20tree.feature%20%0A%20%20%20%20%20%20%20%20node_threshold%20%3D%20tree.threshold.threshold_at%0A%20%20%20%20%20%20%20%20if%20sample%5Bnode_feature%5D%20%3C%3D%20node_threshold%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20return(predict_one(tree.left%2C%20sample))%0A%20%20%20%20%20%20%20%20return(predict_one(tree.right%2C%20sample))%0A%0A%20%20%20%20class%20DecisionTree%3A%0A%20%20%20%20%20%20%20%20%22%22%22%0A%20%20%20%20%20%20%20%20Wrap%20everyting%20up%20in%20a%20familiar%20package.%0A%20%20%20%20%20%20%20%20%22%22%22%0A%20%20%20%20%20%20%20%20def%20__init__(self%2C%20max_depth%20%3D%205%2C%20min_samples_split%20%3D%202)%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20self.max_depth%20%3D%20max_depth%0A%20%20%20%20%20%20%20%20%20%20%20%20self.min_samples_split%20%3D%20min_samples_split%0A%20%20%20%20%20%20%20%20%20%20%20%20self.root%20%3D%20None%0A%20%20%20%20%20%20%20%20def%20fit(self%2C%20X%2C%20y)%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20self.root%20%3D%20build_tree(X%2C%20y%2C%20max_depth%3Dself.max_depth%2C%20min_samples_split%3Dself.min_samples_split)%0A%0A%20%20%20%20%20%20%20%20def%20predict(self%2C%20X)%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20results%20%3D%20%5B%5D%0A%20%20%20%20%20%20%20%20%20%20%20%20for%20x%20in%20X%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20result%20%3D%20predict_one(self.root%2C%20x)%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20results.append(result)%0A%20%20%20%20%20%20%20%20%20%20%20%20return(results)%0A%20%20%20%20return%20(DecisionTree%2C)%0A%0A%0A%40app.cell%0Adef%20_(datasets%2C%20train_test_split)%3A%0A%20%20%20%20wine%20%3D%20datasets.load_wine()%0A%20%20%20%20X%20%3D%20wine.data%0A%20%20%20%20y%20%3D%20wine.target%0A%20%20%20%20X_train%2C%20X_test%2C%20y_train%2C%20y_test%20%3D%20train_test_split(X%2Cy%2C%20test_size%3D0.2%2C%20random_state%3D42)%0A%20%20%20%20return%20X_test%2C%20X_train%2C%20y_test%2C%20y_train%0A%0A%0A%40app.cell%0Adef%20_(DecisionTree%2C%20X_test%2C%20X_train%2C%20classification_report%2C%20y_test%2C%20y_train)%3A%0A%20%20%20%20dtree%20%3D%20DecisionTree(max_depth%3D3%2C%20min_samples_split%3D2)%0A%20%20%20%20dtree.fit(X_train%2Cy_train)%0A%20%20%20%20y_pred%20%3D%20dtree.predict(X_test)%0A%20%20%20%20print(classification_report(y_pred%3Dy_pred%2C%20y_true%3Dy_test))%0A%20%20%20%20return%0A%0A%0A%40app.cell%0Adef%20_(X_test%2C%20X_train%2C%20classification_report%2C%20y_test%2C%20y_train)%3A%0A%20%20%20%20from%20sklearn.tree%20import%20DecisionTreeClassifier%0A%20%20%20%20sk_tree%20%3D%20DecisionTreeClassifier(max_depth%3D3%2C%20min_samples_split%3D2)%0A%20%20%20%20sk_tree.fit(X_train%2C%20y_train)%0A%20%20%20%20y_pred_sk%20%3D%20sk_tree.predict(X_test)%0A%20%20%20%20print(classification_report(y_pred%3Dy_pred_sk%2C%20y_true%3Dy_test))%0A%20%20%20%20return%0A%0A%0Aif%20__name__%20%3D%3D%20%22__main__%22%3A%0A%20%20%20%20app.run()%0A</marimo-code></head>
+  <body>
+    <div id="root"></div>
+    <!-- This is a portal for the data editor to render in -->
+    <div id="portal" data-testid="glide-portal" style="position: fixed; left: 0; top: 0; z-index: 9999"></div>
+    <script data-marimo="true">
+      window.__MARIMO_MOUNT_CONFIG__ = {
+            "filename": "notebook.py",
+            "mode": "read",
+            "version": "0.17.0",
+            "serverToken": "unused",
+            "config": {"ai": {"models": {"custom_models": [], "displayed_models": []}}, "completion": {"activate_on_typing": true, "copilot": false}, "diagnostics": {"sql_linter": true}, "display": {"cell_output": "below", "code_editor_font_size": 14, "dataframes": "rich", "default_table_max_columns": 50, "default_table_page_size": 10, "default_width": "medium", "reference_highlighting": false, "theme": "light"}, "formatting": {"line_length": 79}, "keymap": {"overrides": {}, "preset": "default"}, "language_servers": {"pylsp": {"enable_flake8": false, "enable_mypy": true, "enable_pydocstyle": false, "enable_pyflakes": false, "enable_pylint": false, "enable_ruff": true, "enabled": true}}, "mcp": {"mcpServers": {}, "presets": []}, "package_management": {"manager": "pip"}, "runtime": {"auto_instantiate": true, "auto_reload": "off", "default_sql_output": "auto", "on_cell_change": "autorun", "output_max_bytes": 8000000, "reactive_tests": true, "std_stream_max_bytes": 1000000, "watcher_on_save": "lazy"}, "save": {"autosave": "off", "autosave_delay": 1000, "format_on_save": false}, "server": {"browser": "default", "follow_symlink": false}, "snippets": {"custom_paths": [], "include_default_snippets": true}},
+            "configOverrides": {},
+            "appConfig": {"sql_output": "auto", "width": "medium"},
+            "view": {"showAppCode": false},
+            "notebook": null,
+            "session": null,
+            "runtimeConfig": null,
+        };
+    </script>
+  </body>
+</html>
