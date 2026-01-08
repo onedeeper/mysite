@@ -13,6 +13,8 @@ A selection of my most recent projects, from newest to oldest
 
 Things I built explicitly for the purpose of deeper understanding. 
 
+- **[Graph Convolutional Networks from Scratch](/gcn.html)** ✅ - [Python] A tutorial on encoding and learning relationships with graph convolutions.
+
 - **[Decision Tree from Scratch](/decision_tree/)** ✅ - [Python] A tutorial on implementing a decision tree from scratch.
 
 - **[Recurrent and fully connected neural networks from scratch](https://github.com/onedeeper/deeplearning/tree/main)** ✅- [Python] Two notebooks where I develop two foundational machine learning models, the multi-layer perceptron and recurrent neural network, from scratch.
