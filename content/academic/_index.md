@@ -14,6 +14,7 @@ description: ""
 - **[Yet Another Deep Learning Explanation](/dl.html)**
 - **[Updating Priors with Bayesian Inference](/Updating_priors.html)**
 - **[A reproducability checklist for computational science](/reproduce.html)**
+- **[Central Limit Theorem for Dummies](/CLT%20for%20Dummies.html)**
 <!-- ## Conference Presentations
 
 - **Title of the Presentation** - Conference Name, Location (Year) <span style="color: blue;">**Presented**</span>
