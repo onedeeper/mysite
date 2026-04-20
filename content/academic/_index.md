@@ -15,6 +15,7 @@ description: ""
 - **[Updating Priors with Bayesian Inference](/Updating_priors.html)**
 - **[A reproducability checklist for computational science](/reproduce.html)**
 - **[Standard Error](/Standard%20Error.html)**
+- **[Neural Ordinary Differential Equations for Simulating Metabolic Pathway Dynamics from Time-Series Multiomics Data](https://arxiv.org/abs/2512.08732)**
 <!-- ## Conference Presentations
 
 - **Title of the Presentation** - Conference Name, Location (Year) <span style="color: blue;">**Presented**</span>
