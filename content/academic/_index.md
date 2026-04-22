@@ -15,6 +15,7 @@ description: ""
 - **[Updating Priors with Bayesian Inference](/Updating_priors.html)**
 - **[A reproducability checklist for computational science](/reproduce.html)**
 - **[Standard Error](/Standard%20Error.html)**
+- **[How the posterior got its width - A visual story about uncertainty in Bayesian models](/posterior_width.html)**
 - **[Neural Ordinary Differential Equations for Simulating Metabolic Pathway Dynamics from Time-Series Multiomics Data](https://arxiv.org/abs/2512.08732)**
 <!-- ## Conference Presentations
 
