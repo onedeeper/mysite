@@ -16,6 +16,7 @@ description: ""
 - **[A reproducability checklist for computational science](/reproduce.html)**
 - **[Standard Error](/Standard%20Error.html)**
 - **[How the posterior got its width - A visual story about uncertainty in Bayesian models](/posterior_width.html)**
+- **[How The Linear Regression Got Its Bowtie](/lin_reg_uncert_fin.html)**
 - **[Neural Ordinary Differential Equations for Simulating Metabolic Pathway Dynamics from Time-Series Multiomics Data](https://arxiv.org/abs/2512.08732)**
 <!-- ## Conference Presentations
 
